@@ -113,12 +113,21 @@ $(".list-group").on("click", "span", function() {
   //change <span> to <input>
   $(this).replaceWith(dateInput);
   
-  //focuses on <input>
+  //enable jquery ui date picker
+  dateInput.datepicker({
+    minDate: 1,
+    onClose: function() {
+      //when calender is closed the change event is triggered
+      $(this).trigger("change");
+    }
+  });
+
+  //bring up calender
   dateInput.trigger("focus")
 });
 
 //changes <textarea> back into a <span>
-$(".list-group").on("blur", "input[type='text']", function() {
+$(".list-group").on("change", "input[type='text']", function() {
   //get current value
   var date = $(this)
   .val()
@@ -216,6 +225,12 @@ $("#trash").droppable({
     console.log("out")
   }
 });
+
+//adds a calender to the modal date input that the user can pick form
+$("#modalDueDate").datepicker({
+  minDate: 1
+});
+
 
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function() {
