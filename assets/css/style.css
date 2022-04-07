@@ -1,3 +1,11 @@
 ul.list-group {
   min-height: 130px;
 }
+
+.list-group-item span:hover {
+  cursor: pointer;
+}
+
+.list-group-item p:hover {
+  cursor: pointer;
+}
