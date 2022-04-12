@@ -234,10 +234,10 @@ $("#trash").droppable({
   }
 });
 
-//!change back to "1"
+
 //adds a calender to the modal date input that the user can pick form
 $("#modalDueDate").datepicker({
-  minDate: -1
+  minDate: 1
 });
 
 
